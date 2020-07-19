@@ -1,0 +1,122 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="well well-sm">
+                <form class="form-horizontal" action="/update" method="post">
+                    <fieldset>
+                        <legend class="text-center header">Registrar Medicos</legend>
+                        
+                        <div class="row">
+                            <div class="col-md-1">
+                                <div class="form-group">
+                                    
+                                    <input id="fname" name="Uid1" value="{{medic0.Uid}}" type="hidden" placeholder="Codigo" 
+                                        class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="">N° de Telefono: </label>
+                                    <input id="fname" name="phone1" value="{{medic0.phone}}" type="text" placeholder="N° de Telefono"
+                                        class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="">Especialidad: </label>
+                                    <input id="fname" name="specialism1" value="{{medic0.specialism}}" type="text" placeholder="Especialidad"
+                                        class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="form-group">
+                                    <label for="">Nombre Completo: </label>
+                                    <input id="fname" name="name1" value="{{medico.name}}" type="text" placeholder="Nombre Completo"
+                                        class="form-control">
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr>
+                        <hr>
+                        {{!-- ________________________________________________________ --}}
+                        <div class="row">
+                            <div class="col-md-1">
+                                <div class="form-group">
+                                    
+                                    <input id="fname" name="Uid2" value="{{medic1.Uid}}" type="hidden" placeholder="Codigo" 
+                                        class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="">N° de Telefono: </label>
+                                    <input id="fname" name="phone2" value="{{medic1.phone}}" type="text" placeholder="N° de Telefono"
+                                        class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="">Especialidad:</label>
+                                    <input id="fname" name="specialism2" value="{{medic1.specialism}}" type="text" placeholder="Especialidad"
+                                        class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="form-group">
+                                    <label for="">Nombre Completo</label>
+                                    <input id="fname" name="name2" value="{{medic1.name}}" type="text" placeholder="Nombre Completo"
+                                        class="form-control">
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr>
+                        <hr>
+                        {{!-- ______________________________________________________________ --}}
+                        <div class="row">
+                            <div class="col-md-1">
+                                <div class="form-group">
+                                    
+                                    <input id="fname" name="Uid3" value="{{medic2.Uid}}" type="hidden" placeholder="Codigo" 
+                                        class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="">N° de Telefono: </label>
+                                    <input id="fname" name="phone3" value="{{medic2.phone}}" type="text" placeholder="N° de Telefono"
+                                        class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="">Especialidad: </label>
+                                    <input id="fname" name="specialism3" value="{{medic2.specialism}}" type="text" placeholder="Especialidad"
+                                        class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="form-group">
+                                    <label for="">Nombre Completo</label>
+                                    <input id="fname" name="name3" value="{{medic2.name}}" type="text" placeholder="Nombre Completo"
+                                        class="form-control">
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr>
+                        <hr>
+
+
+                        <div class="form-group">
+                            <div class="col-md-12 text-center">
+                                <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

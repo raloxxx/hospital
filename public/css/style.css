@@ -1,0 +1,82 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 15px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 200;
+}
+
+body {
+    margin: 0;
+}
+
+.bg-light {
+    background-color: #e4022d!important;
+}
+
+.card {
+    margin: 10px 0;
+    width: 100%;
+    height: 300px;
+    max-height: 300px;
+}
+
+.add-cart {
+    position: absolute;
+    right: -15px;
+    bottom: -10px;
+    font-size: 30px;
+    border: solid #e4022d 2px;
+    transition: .5s;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: #fff;
+    color: #e4022d;
+}
+.btn-primary.focus, .btn-primary:focus {
+    color: #fff;
+    background-color: #e4022d;
+    border-color: #e4022d;
+    box-shadow: 0 0 0 0.2rem #e4022b59;
+}
+
+.btn-primary {
+    background-color: #e4022d!important;
+    border-color: #e4022d!important;
+}
+
+.add-cart:hover {
+    cursor: pointer;
+    transition: .5s;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: #e4022d;
+    color: #fff;
+}
+
+/* Presentation */
+
+.body {
+    position: absolute;
+    background-color: #e4022d;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+
+}
+
+.back {
+    padding: 5px;
+    position: fixed;
+    bottom: 0px;
+    right: 0;
+    z-index: 200;
+}
+
+.list {
+    font-size: 12px;
+}
