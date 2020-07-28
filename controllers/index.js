@@ -1,16 +1,7 @@
-const fs = require('fs')
-const path = require('path')
-var util = require('util')
-
 const express = require("express")
-const multer = require('multer')
 
-
-const flickrOAuth = require('../flickrOAuth')
-
-const Order = require("../models/order")
+const Calls = require('../models/call')
 const Medics = require("../models/medic")
-const { pbkdf2 } = require('crypto')
 
 const router = express.Router()
 
@@ -116,6 +107,34 @@ module.exports = async () => {
                 res.status(500).json({
                     status: false,
                     message: "Internal Server Error"
+                })
+            }
+        })
+        .post('/api/call', async(req, res, next) => {
+            const body = req.body
+            let call = null
+
+            call = new Calls({
+                phone: body.phone,
+                clientName: body.clientName,
+                medicName: body.medicName
+            })
+
+            try {
+                call = await call.save()
+            } catch (error) {
+                if (error) throw error
+            }
+
+            if (call) {
+                res.status(200).json({
+                    status: true,
+                    message: 'Operacion realizada con exito'
+                })
+            } else {
+                res.status(400).json({
+                    status: false,
+                    message: 'Lo sentimos ha ocurrido un error'
                 })
             }
         })
