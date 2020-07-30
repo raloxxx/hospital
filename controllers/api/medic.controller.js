@@ -5,7 +5,6 @@ const moment = require('moment')()
 module.exports = () => {
 
     async function find(req, res, next) {
-        const query = req.query
         
         let date = new Date()
         console.log(date.getHours(0), moment.format('dddd').toLowerCase())
@@ -67,10 +66,23 @@ module.exports = () => {
 
     }
 
+    async function save(req, res, next) {
+        const body = req.body
+        
+        let hour = []
+
+        console.log(body )
+
+        return res.status(200).json({
+            status: true
+        })
+    }
+
     
 
     return {
         find,
-        findByDate
+        findByDate,
+        save
     }
 }

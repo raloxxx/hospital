@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const medicsSchema = new Schema({
-    Uid: {
+    dni: {
         type: String
     },
     phone: {
@@ -17,6 +17,9 @@ const medicsSchema = new Schema({
         type: String
     },
     attentionday: {
+        type: Array
+    },
+    attentionhour: {
         type: Array
     },
     
