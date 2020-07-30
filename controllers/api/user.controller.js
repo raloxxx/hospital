@@ -50,6 +50,41 @@ module.exports = () => {
                 message: 'Operacion exitosa'
             })
     }
+
+    async function findByDni(req, res, next) {
+        const body = req.body
+        let response = null
+
+        try {
+            response = await Users.findOne({dni: body.dni})
+        } catch (error) {
+            if (error)
+                    throw error
+        }
+
+
+        if(!response) {
+            return res.status(400).json({
+                status: false,
+                message: 'Usuario incorrecto, Verifique sus datos e intentelo nuevamente'
+            })
+        }
+
+        if(response.dni != body.dni) {
+            return res.status(400).json({
+                status: true,
+                data: response,
+                message: 'Usuario incorrecto, Verifique sus datos e intentelo nuevamente'
+            })
+        }
+        
+        return res.status(200).json({
+                status: true,
+                data: response,
+                message: 'Operacion exitosa'
+            })
+    }
+
     async function save(req, res, next) {
         const body = req.body
         let response = null
@@ -86,6 +121,7 @@ module.exports = () => {
     return {
         find,
         findOne,
+        findByDni,
         save
     }
 }

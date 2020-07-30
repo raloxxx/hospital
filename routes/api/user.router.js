@@ -8,6 +8,7 @@ router
     .get('/', apiUserController().find)
     .get('/:dni', apiUserController().findOne)
     .post('/', apiUserController().save)
+    .post('/login', apiUserController().findByDni)
 
 
 module.exports = router
