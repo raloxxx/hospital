@@ -19,37 +19,6 @@ const port = process.env.PORT || 3000;
 
 
 
-// var flickr = new Flickr(Flickr.OAuth.createPlugin(
-//   'fd2688ed60c8cd151c13cf939cc4847c',
-//   'e69c7c4f88c61e5e',
-//   '72157714052110986-d8171b878da7f085',
-//   '9f08126511241f22'
-// ));
-
-// console.log(flickr._)
-
-// var upload = new Flickr.Upload(flickr._, './public/assets/uploads/Collage sin título (1)-1587634775523.jpg', {
-//   title: 'Works on MY machine!'
-// });
-
-// upload.then(function (res) {
-//   console.log('yay!', res.body);
-// }).catch(function (err) {
-//   console.error('bonk', err);
-// });
-
-
-
-// var flickr = new Flickr('fd2688ed60c8cd151c13cf939cc4847c');
-
-// flickr.photos.search({
-//     user_id: '188191855@N08'
-//   }).then(function (res) {
-//     console.log('yay!', res.body.photos);
-//   }).catch(function (err) {
-//     console.error('bonk', err);
-//   });
-
 
 
 
@@ -85,7 +54,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/public', express.static('public'))
 
 routes(app)
-
 
 
 

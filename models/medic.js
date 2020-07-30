@@ -15,7 +15,11 @@ const medicsSchema = new Schema({
     },
     name: {
         type: String
-    }
+    },
+    attentionday: {
+        type: Array
+    },
+    
 })
 
 module.exports = mongoose.model('Medics', medicsSchema)
