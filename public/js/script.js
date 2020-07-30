@@ -42,7 +42,7 @@ function sendData(e) {
 
     // for(let i = from; i <= to; i += 1) {
     //     console.log(i)
-    }
+    //}
 
     // Genera bucle infinito
 
