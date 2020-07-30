@@ -6,7 +6,6 @@ const router = express.Router()
 
 router
     .get('/', apiMedicController().find)
-    .get('/date', apiMedicController().findByDate)
     .post('/', apiMedicController().save)
 
 

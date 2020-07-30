@@ -38,11 +38,11 @@ function sendData(e) {
     let from = document.getElementById("from").value
     let to = document.getElementById("to").value
 
-    console.log(from, to)
-
-    // for(let i = from; i <= to; i += 1) {
-    //     console.log(i)
-    //}
+    from = parseInt(from, 10)
+    to = parseInt(to, 10)
+    for(let i = from; i <= to; i += 1) {
+        hours.push(i)
+    }
 
     // Genera bucle infinito
 
