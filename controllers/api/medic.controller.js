@@ -5,9 +5,16 @@ const moment = require('moment')()
 module.exports = () => {
 
     async function find(req, res, next) {
+        const query = req.query
+        
+        let date = new Date()
+        console.log(date.getHours(0), moment.format('dddd').toLowerCase())
         let response = null
         try {
             response = await Medics.find({
+                "attentionhour": { 
+                    $in: [date.getHours(0).toString()]
+                },
                 "attentionday": { 
                     $in: [moment.format('dddd').toLowerCase()] 
                 } 
