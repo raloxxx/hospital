@@ -1,18 +1,15 @@
 const path = require('path')
-const fs = require('fs')
 
 const express = require('express')
 const handlebars = require('express-handlebars')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const fileUpload = require('express-fileupload')
-const readline = require('readline')
-const Flickr = require('flickr-sdk')
 
 
 
 
-const routes = require('./controllers')
+const routes = require('./routes')
 
 
 const app = express();
@@ -87,12 +84,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/public', express.static('public'))
 
-async function rutas() {
-  let rt = await routes()
-  app.use("/", rt)
-}
-
-rutas()
+routes(app)
 
 
 
