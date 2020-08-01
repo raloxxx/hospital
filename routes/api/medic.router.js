@@ -6,6 +6,7 @@ const router = express.Router()
 
 router
     .get('/', apiMedicController().find)
+    .post('/', apiMedicController().save)
 
 
 module.exports = router
