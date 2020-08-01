@@ -11,12 +11,12 @@ module.exports = () => {
         let response = null
         try {
             response = await Medics.find({
-                // "attentionhour": { 
-                //     $in: [date.getHours(0).toString()]
-                // },
-                // "attentionday": { 
-                //     $in: [moment.format('dddd').toLowerCase()] 
-                // } 
+                "attentionhour": { 
+                    $in: [(date.getHours() - 5).toString()]
+                },
+                "attentionday": { 
+                    $in: [moment.format('dddd').toLowerCase()] 
+                } 
             }).lean()
         } catch (error) {
             if (error)
@@ -24,8 +24,9 @@ module.exports = () => {
         }
 
         if(!response) {
-            return res.status(500).json({
+            return res.status(200).json({
                 status: false,
+                data: response,
                 message: "Internal Server Error"
             })
         }
