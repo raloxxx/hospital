@@ -1,3 +1,5 @@
+const bcrypt = require('bcryptjs');
+
 const Users = require('../../models/user')
 
 module.exports = () => {
@@ -62,21 +64,22 @@ module.exports = () => {
                     throw error
         }
 
+        console.log(response)
 
         if(!response) {
-            return res.status(400).json({
+            return res.status(200).json({
                 status: false,
                 message: 'Usuario incorrecto, Verifique sus datos e intentelo nuevamente'
             })
         }
 
-        if(response.dni != body.dni) {
-            return res.status(400).json({
-                status: true,
-                data: response,
+        if(!bcrypt.compareSync(body.password, response.password)) {
+            return res.status(200).json({
+                status: false,
                 message: 'Usuario incorrecto, Verifique sus datos e intentelo nuevamente'
             })
         }
+        
         
         return res.status(200).json({
                 status: true,
@@ -89,11 +92,27 @@ module.exports = () => {
         const body = req.body
         let response = null
 
+
+        try {
+            response = await Users.findOne({dni: body.dni})
+        } catch (error) {
+            if (error)
+                    throw error
+        }
+
+        if(response) {
+            return res.status(200).json({
+                status: false,
+                message: '¡Ya existe un usuario con este dni!'
+            })
+        }
+
+
         response = new Users({
             fullName: body.fullName,
             dni: body.dni,
             phone: body.phone,
-            password: body.password
+            password: bcrypt.hashSync(body.password, 10),
         })
 
 
