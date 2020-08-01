@@ -32,7 +32,7 @@ module.exports = () => {
     async function getHour(req, res, next) {
         let date = new Date()
         res.json({
-            hora: date.getHours(),
+            hora: date.getHours() - 5,
             day: moment.format('dddd').toLowerCase()
         })
     }
