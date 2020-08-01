@@ -64,7 +64,34 @@ module.exports = () => {
                     throw error
         }
 
-        console.log(response)
+        if (response) {
+            return res.status(200).json({
+                status: false,
+                data: response,
+                message: '¡Ya existe un usuario con este dni!'
+            })
+        }
+        
+        
+        return res.status(200).json({
+                status: true,
+                data: response,
+                message: 'Usuario disponible'
+            })
+    }
+
+
+    async function login(req, res, next) {
+        const body = req.body
+        let response = null
+
+        try {
+            response = await Users.findOne({dni: body.dni})
+        } catch (error) {
+            if (error)
+                    throw error
+        }
+
 
         if(!response) {
             return res.status(200).json({
@@ -140,7 +167,8 @@ module.exports = () => {
     return {
         find,
         findOne,
-        findByDni,
-        save
+        login,
+        save,
+        findByDni
     }
 }
