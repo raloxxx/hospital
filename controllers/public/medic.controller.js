@@ -1,4 +1,5 @@
-const Medics = require("../../models/medic")
+const Medics = require('../../models/medic')
+const moment = require('moment')()
 
 module.exports = () => {
 
@@ -28,8 +29,16 @@ module.exports = () => {
 
 
     }
+    async function getHour(req, res, next) {
+        let date = new Date()
+        res.json({
+            hora: date.getHours(),
+            day: moment.format('dddd').toLowerCase()
+        })
+    }
 
     return {
-        render
+        render,
+        getHour
     }
 }
