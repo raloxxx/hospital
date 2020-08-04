@@ -3,6 +3,7 @@ const moment = require('moment')()
 
 module.exports = () => {
 
+    
     async function render(req, res, next) {
         let response = null
 
@@ -29,6 +30,13 @@ module.exports = () => {
 
 
     }
+    async function getPolitics(req, res, next) {
+        
+
+        return res.render("export")
+
+
+    }
     async function getHour(req, res, next) {
         let date = new Date()
         res.json({
@@ -39,6 +47,7 @@ module.exports = () => {
 
     return {
         render,
-        getHour
+        getHour,
+        getPolitics
     }
 }
