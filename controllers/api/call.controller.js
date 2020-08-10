@@ -4,7 +4,7 @@ const Calls = require("../../models/call")
 
 
 const accountSid = 'AC36c3d9b8239ffab82f83def470f869c6'; // Tu Account SID obtenido de www.twilio.com/console
-const authToken = 'e7493a0a7c048fd7337ecacfe01e27fd'; // Tu Auth Token
+const authToken = '531aafb4d988e259c01e98d0f703a4fc'; // Tu Auth Token
 
 const client = new twilio(accountSid, authToken);
 
