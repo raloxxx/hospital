@@ -1,7 +1,11 @@
 'use strict'
 const mongoose = require('mongoose')
 
+const moment = require('moment-timezone');
+
 const Schema = mongoose.Schema
+
+const datePeru = moment().tz("America/Lima").format();
 
 const callsSchema = new Schema({
     phone: {
@@ -12,6 +16,10 @@ const callsSchema = new Schema({
     },
     medicName: {
         type: String
+    },
+    created_at: {
+        type: Date,
+        default: datePeru
     }
 })
 
