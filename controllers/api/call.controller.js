@@ -36,6 +36,7 @@ module.exports = () => {
                 message: "Internal Server Error"
             })
         }
+        console.log('numero de telefono', body.medicPhone )
 
         client.messages.create({
             body: `Lamada recibida desde la aplicacion por ${body.phone}`,
