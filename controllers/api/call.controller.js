@@ -3,8 +3,8 @@ const twilio = require('twilio');
 const Calls = require("../../models/call")
 
 
-const accountSid = 'AC3d80e41.......'; // Tu Account SID obtenido de www.twilio.com/console
-const authToken = 'tu_auth_token'; // Tu Auth Token
+const accountSid = 'AC36c3d9b8239ffab82f83def470f869c6'; // Tu Account SID obtenido de www.twilio.com/console
+const authToken = 'e7493a0a7c048fd7337ecacfe01e27fd'; // Tu Auth Token
 
 const client = new twilio(accountSid, authToken);
 
@@ -38,8 +38,8 @@ module.exports = () => {
         }
 
         client.messages.create({
-            body: 'Llamada recibida desde la aplicacion',
-            to: `+51953727681`,  // Número al que se enviará el SMS a 10 digitos incluyendo el signo +
+            body: `Lamada recibida desde la aplicacion por ${body.phone}`,
+            to: `+51${body.medicPhone}`,  // Número al que se enviará el SMS a 10 digitos incluyendo el signo +
             from: '+14302058656' // Número comprado de Twilio.com a 10 digitos incluyendo el signo +
         })
         .then((message) => console.log(message.sid));
